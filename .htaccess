@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteRule ^use-the-room/?$ / [R=301,L]
+RewriteRule ^build-it-with-us/?$ /#pricing [R=301,L,NE]
+RewriteRule ^about-us/?$ / [R=301,L]
+RewriteRule ^contact/?$ / [R=301,L]
+RewriteRule ^book/?$ / [R=301,L]
+RewriteRule ^subpage/?.*$ / [R=301,L]
+RewriteRule ^real-estate-single-page-layout/.*$ / [R=301,L]
+RewriteRule ^legal-notice/?$ / [R=301,L]
+RewriteRule ^privacy-policy/?$ / [R=301,L]
+RewriteRule ^blog.*$ / [R=301,L]
+RewriteRule ^jobs.*$ / [R=301,L]
