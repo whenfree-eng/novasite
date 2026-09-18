@@ -307,7 +307,12 @@
 
   /* anchor offset for sticky header */
   section[id],div[id]{scroll-margin-top:84px}
-@media (max-width:560px){.phones{gap:.6rem}.phone{width:clamp(86px,26vw,150px)}.phone:nth-child(2){width:clamp(95px,29vw,165px)}.phone .cap{font-size:.68rem}}.skip{position:absolute;left:-9999px;top:0;background:#e8b04b;color:#141810;padding:.6rem 1.1rem;z-index:100;font-weight:600}.skip:focus{left:0}main p a,main li a,.foot-col a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}h3.name{margin:0;font-size:inherit;font-weight:inherit;font-family:inherit}.paths .wide{grid-column:1/-1}.paths .wide .ph{height:300px}.faces{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:2.4rem}.face{margin:0}.face img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block;filter:saturate(.95)}.face figcaption{font-family:ui-monospace,Menlo,monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-top:.55rem;text-align:center}</style>
+@media (max-width:560px){.phones{gap:.6rem}.phone{width:clamp(86px,26vw,150px)}.phone:nth-child(2){width:clamp(95px,29vw,165px)}.phone .cap{font-size:.68rem}}.skip{position:absolute;left:-9999px;top:0;background:#e8b04b;color:#141810;padding:.6rem 1.1rem;z-index:100;font-weight:600}.skip:focus{left:0}main p a,main li a,.foot-col a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}h3.name{margin:0;font-size:inherit;font-weight:inherit;font-family:inherit}.paths .wide{grid-column:1/-1}.paths .wide .ph{height:300px}.faces{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:2.4rem}.face{margin:0}.face img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block;filter:saturate(.95)}.face figcaption{font-family:ui-monospace,Menlo,monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-top:.55rem;text-align:center}
+.rate a.r{display:block;text-decoration:none;color:inherit;border-color:rgba(232,169,75,.45);background:linear-gradient(160deg,rgba(232,169,75,.14),rgba(232,169,75,.04))}
+.rate a.r:hover{border-color:rgba(232,169,75,.8)}
+.bookframe{margin:2.2rem auto 0;max-width:960px;background:#fdfcf9;border-radius:18px;border:1px solid rgba(241,233,214,.28);overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.45)}
+.bookframe iframe{display:block;width:100%;height:min(78vh,760px);border:0}
+@media(max-width:700px){.bookframe iframe{height:82vh}}</style>
 </head>
 <body><a class="skip" href="#main">Skip to content</a>
 
@@ -325,7 +330,7 @@
       <a href="#work">Work</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn primary" href="https://sumupbookings.com/the-nova-studios" target="_blank" rel="noopener">Book the studio <span class="arw">&rarr;</span></a>
+    <a class="btn primary" href="#book">Book the studio <span class="arw">&rarr;</span></a>
   </div>
 </header>
 <main id="main">
@@ -340,7 +345,7 @@
     <h1 class="hero-h serif">Walk in with an idea. Walk out with a show. <em>And the clips to grow it.</em></h1>
     <p class="lede">Nova Studios is a private podcast &amp; video room in Altrincham. Hire the space and run your own session, or hand us the whole thing. We film it, edit it, and turn one recording into a month of scroll-stopping clips.</p>
     <div class="hero-cta">
-      <a class="btn primary" href="https://sumupbookings.com/the-nova-studios" target="_blank" rel="noopener">Book the studio <span class="arw">&rarr;</span></a>
+      <a class="btn primary" href="#book">Book the studio <span class="arw">&rarr;</span></a>
       <a class="btn ghost" href="#production">See how we build shows <span class="arw">&rarr;</span></a>
     </div>
     <div class="hero-meta">
@@ -408,7 +413,7 @@
           <span class="tag">&#9679; Custom builds</span>
           <h3>Or we build you a set of your own</h3>
           <p class="sub">Want your show to have its own look? We design and build bespoke sets in the room. This one is Heart &amp; Home with Lisa Hensby: built for her show with furniture from Arighi Bianchi, and every episode films on it.</p>
-          <a class="go" href="mailto:info@thenovastudios.co.uk?subject=Custom%20set">Ask about a custom set <span class="arw">&rarr;</span></a>
+          <a class="go" href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20a%20custom%20set%20build" target="_blank" rel="noopener">Ask about a custom set on WhatsApp <span class="arw">&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -519,6 +524,7 @@
       <div class="r reveal"><div class="lbl">Audio + video</div><div class="v">&pound;99</div><div class="u" style="color:var(--ink)">per hour &middot; &pound;160 for 2 hours</div></div>
       <div class="r reveal"><div class="lbl">Half day</div><div class="v">&pound;300</div><div class="u">4 hours, audio + video</div></div>
       <div class="r reveal"><div class="lbl">Full day</div><div class="v">&pound;560</div><div class="u">8 hours, audio + video</div></div>
+      <a class="r reveal book-r" href="#book"><div class="lbl">Ready to record?</div><div class="v" style="font-size:1.3rem;line-height:1.25;margin-top:.55rem">Pick a time, pay online, done</div><div class="u" style="color:#e8b04b">Book now <span class="arw">&rarr;</span></div></a>
     </div>
 
     <div class="pkg-head">
@@ -535,7 +541,7 @@
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> One fully edited episode</li>
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 2 to 3 captioned clips</li>
         </ul>
-        <a class="btn" href="mailto:info@thenovastudios.co.uk?subject=Starter%20package%20enquiry">Choose Starter</a>
+        <a class="btn" href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20go%20with%20the%20Starter%20package" target="_blank" rel="noopener">Choose Starter</a>
       </div>
       <div class="pkg feat reveal">
         <span class="badge">Most popular</span>
@@ -548,7 +554,7 @@
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 5 to 10 captioned, graded clips</li>
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Delivered named, ready to post</li>
         </ul>
-        <a class="btn primary" href="mailto:info@thenovastudios.co.uk?subject=Growth%20package%20enquiry">Choose Growth</a>
+        <a class="btn primary" href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20go%20with%20the%20Growth%20package" target="_blank" rel="noopener">Choose Growth</a>
       </div>
       <div class="pkg reveal">
         <h3 class="name">Premium</h3>
@@ -560,7 +566,7 @@
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Full clip volume + scheduling</li>
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Strategy &amp; ongoing support</li>
         </ul>
-        <a class="btn" href="mailto:info@thenovastudios.co.uk?subject=Premium%20package%20enquiry">Talk it through</a>
+        <a class="btn" href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20talk%20through%20the%20Premium%20package" target="_blank" rel="noopener">Talk it through</a>
       </div>
     </div>
     <p class="price-note reveal">Add-ons any time: extra clips (3 for &pound;60, 6 for &pound;100, 10 for &pound;150), full episode edits from &pound;180, custom short-form from &pound;80, thumbnails &amp; titles from &pound;40. Every package is built around what your show actually needs. Tell us and we'll shape it.</p>
@@ -665,11 +671,15 @@
   <div class="wrap final-in">
     <span class="eyebrow reveal"><span class="tk">&#9679;</span> Book a session</span>
     <h2 class="reveal serif" style="margin-top:1rem">Let's get your show in the room.</h2>
-    <p class="lede reveal">Tell us what you're making and we'll help you pick the room time or package that fits. No pressure, no jargon. Just a good conversation to start.</p>
-    <div class="hero-cta reveal">
-      <a class="btn primary" href="https://sumupbookings.com/the-nova-studios" target="_blank" rel="noopener">Book online <span class="arw">&rarr;</span></a>
-      <a class="btn ghost" href="mailto:info@thenovastudios.co.uk?subject=Studio%20booking%20enquiry">Email the studio</a>
+    <p class="lede reveal">Pick your time below, pay, and you're booked in a couple of minutes. Prefer to talk it through first? WhatsApp or call and we'll sort it with you.</p>
+    <div class="bookframe reveal">
+      <iframe src="https://sumupbookings.com/the-nova-studios" title="Book The Nova Studios online" loading="lazy" allow="payment"></iframe>
+    </div>
+    <div class="hero-cta reveal" style="margin-top:1.4rem">
+      <a class="btn ghost" href="https://sumupbookings.com/the-nova-studios" target="_blank" rel="noopener">Open booking in a new tab <span class="arw">&rarr;</span></a>
+      <a class="btn ghost" href="https://wa.me/447761075775" target="_blank" rel="noopener">WhatsApp us</a>
       <a class="btn ghost" href="tel:+447761075775">Call 07761 075775</a>
+      <a class="btn ghost" href="mailto:info@thenovastudios.co.uk?subject=Studio%20booking%20enquiry">Email the studio</a>
     </div>
     <div class="contactline reveal">
       <span>4 Craven Court, Altrincham WA14 5DY</span>
@@ -694,6 +704,7 @@
         <a href="#room">Use the room</a>
         <a href="#production">Build it with us</a>
         <a href="#pricing">Pricing</a>
+        <a href="#book">Book a session</a>
         <a href="#work">The work</a>
         <a href="https://www.instagram.com/itsnovastudios" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.tiktok.com/@itsnovastudios" target="_blank" rel="noopener">TikTok</a>
