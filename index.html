@@ -309,8 +309,13 @@
   section[id],div[id]{scroll-margin-top:84px}
 @media (max-width:560px){.phones{gap:.6rem}.phone{width:clamp(86px,26vw,150px)}.phone:nth-child(2){width:clamp(95px,29vw,165px)}.phone .cap{font-size:.68rem}}.skip{position:absolute;left:-9999px;top:0;background:#e8b04b;color:#141810;padding:.6rem 1.1rem;z-index:100;font-weight:600}.skip:focus{left:0}main p a,main li a,.foot-col a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}h3.name{margin:0;font-size:inherit;font-weight:inherit;font-family:inherit}.paths .wide{grid-column:1/-1}.paths .wide .ph{height:300px}.faces{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:.8rem;margin-top:2.2rem}.face{margin:0}.face img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block;filter:saturate(.95)}.face figcaption{font-family:ui-monospace,Menlo,monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-top:.55rem;text-align:center}
 .face figcaption small{display:block;font-size:.6rem;letter-spacing:.08em;text-transform:none;color:var(--ink-faint);margin-top:.25rem}
-.rate a.r{display:block;text-decoration:none;color:inherit;border-color:rgba(232,169,75,.45);background:linear-gradient(160deg,rgba(232,169,75,.14),rgba(232,169,75,.04))}
-.rate a.r:hover{border-color:rgba(232,169,75,.8)}
+.rate a.r{display:block;text-decoration:none;color:inherit}
+.rate a.book-r{border-color:rgba(232,169,75,.45);background:linear-gradient(160deg,rgba(232,169,75,.14),rgba(232,169,75,.04))}
+.rate a.book-r:hover{border-color:rgba(232,169,75,.8)}
+.setthumbs{display:flex;gap:.6rem;margin-top:1rem}
+.setthumbs figure{margin:0;flex:1}
+.setthumbs .im{height:88px;border-radius:10px;background-size:cover;background-position:center;border:1px solid var(--line)}
+.setthumbs figcaption{font-family:ui-monospace,Menlo,monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);margin-top:.35rem;text-align:center}
 .bookframe{margin:2.2rem auto 0;max-width:960px;background:#fdfcf9;border-radius:18px;border:1px solid rgba(241,233,214,.28);overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.45)}
 .bookframe iframe{display:block;width:100%;height:min(78vh,760px);border:0}
 @media(max-width:700px){.bookframe iframe{height:82vh}}</style>
@@ -326,9 +331,7 @@
     </a>
     <nav class="top">
       <a href="#room">The Room</a>
-      <a href="#production">Production</a>
       <a href="#pricing">Pricing</a>
-      <a href="#work">Work</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a class="btn primary" href="#book">Book the studio <span class="arw">&rarr;</span></a>
@@ -344,10 +347,10 @@
   <div class="wrap hero-in">
     <span class="onair"><span class="dot"></span> On air &middot; Altrincham</span>
     <h1 class="hero-h serif">Your podcast. <em>From first idea to launch.</em></h1>
-    <p class="lede">Hire our Altrincham studio, or work with us on your set, filming, editing and launch strategy, including social clips.</p>
+    <p class="lede">Hire the studio from &pound;99, or let us film, edit and launch your show.</p>
     <div class="hero-cta">
       <a class="btn primary" href="#book">Book the studio <span class="arw">&rarr;</span></a>
-      <a class="btn ghost" href="#production">Build your show with us <span class="arw">&rarr;</span></a>
+      <a class="go" href="#production" style="align-self:center">Build your show with us <span class="arw">&rarr;</span></a>
     </div>
     <div class="hero-meta">
       <div class="m"><b>Two sets</b><span>One treated room</span></div>
@@ -358,83 +361,11 @@
   </div>
 </div>
 
-<!-- ================= TICKER ================= -->
-<div class="ticker" aria-label="Recorded at Nova">
-  <div class="lane">
-    <div class="set">
-      <span><b>&#9679;</b> Recorded in this room</span>
-      <span>Repeat or Delete <b>with Sarie Taylor</b></span>
-      <span>Catherine Tyldesley</span>
-      <span>Hayley Tamaddon</span>
-      <span>Chris Geere</span>
-      <span>Lindsey Kane</span>
-      <span>Heart &amp; Home <b>with Lisa Hensby</b></span>
-      <span>Sally Dynevor</span>
-      <span>Lucy-Jo Hudson</span>
-      <span>Steph Waring</span>
-      <span>Ross Adams</span>
-      <span>Angela Lonsdale</span>
-    </div>
-    <div class="set" aria-hidden="true">
-      <span><b>&#9679;</b> Recorded in this room</span>
-      <span>Repeat or Delete <b>with Sarie Taylor</b></span>
-      <span>Catherine Tyldesley</span>
-      <span>Hayley Tamaddon</span>
-      <span>Chris Geere</span>
-      <span>Lindsey Kane</span>
-      <span>Heart &amp; Home <b>with Lisa Hensby</b></span>
-      <span>Sally Dynevor</span>
-      <span>Lucy-Jo Hudson</span>
-      <span>Steph Waring</span>
-      <span>Ross Adams</span>
-      <span>Angela Lonsdale</span>
-    </div>
-  </div>
-</div>
-
 <!-- ================= TWO PATHS ================= -->
-<!-- ================= SETS ================= -->
-<section id="sets">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="tk">//</span> One room, two sets</span>
-      <h2 class="big serif">Pick your set.</h2>
-      <p class="lede">Every booking gets the same treated room, the same kit and the same crew. The only choice is the backdrop.</p>
-    </div>
-    <div class="paths">
-      <div class="path reveal">
-        <div class="ph" style="background-image:var(--img-session)"></div>
-        <div class="body">
-          <span class="tag">&#9679; Set one</span>
-          <h3>The Table</h3>
-          <p class="sub">Broadcast mics over a walnut table against the slat wall. The classic face-to-face podcast look.</p>
-        </div>
-      </div>
-      <div class="path reveal">
-        <div class="ph" style="background-image:url('images/sarie-lounge.webp');height:auto;aspect-ratio:16/9"></div>
-        <div class="body">
-          <span class="tag">&#9679; Set two</span>
-          <h3>The Lounge</h3>
-          <p class="sub">Sofas, warm light and the on air sign. Chat-show energy for conversations that need to breathe. Pictured: Repeat or Delete with Sarie Taylor, filmed at Nova.</p>
-        </div>
-      </div>
-      <div class="path wide reveal">
-        <div class="ph" style="background-image:var(--img-lounge)"></div>
-        <div class="body">
-          <span class="tag">&#9679; Custom builds</span>
-          <h3>Or we build you a set of your own</h3>
-          <p class="sub">Want your show to have its own look? We design and build bespoke sets in the room. This one is Heart &amp; Home with Lisa Hensby: built for her show with furniture from Arighi Bianchi, and every episode films on it.</p>
-          <a class="go" href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20a%20custom%20set%20build" target="_blank" rel="noopener">Ask about a custom set on WhatsApp <span class="arw">&rarr;</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="room">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><span class="tk">//</span> Two ways to work with us</span>
+      <span class="eyebrow">Two ways to work with us</span>
       <h2 class="big serif">Rent the room. Or build the whole thing.</h2>
       <p class="lede">Some people just want a great-sounding space and full control. Others want to show up, talk, and let us handle everything after. Nova does both.</p>
     </div>
@@ -449,9 +380,14 @@
           <ul>
             <li>Broadcast mics, mixer &amp; up to 4-person setup</li>
             <li>Multi-camera video, lit and framed</li>
-            <li>We set you up, check levels and hit record with you</li>
+            <li>We set you up; you leave with your clean files the same day</li>
             <li>Walk out with your clean files the same day</li>
           </ul>
+          <div class="setthumbs reveal">
+            <figure><div class="im" style="background-image:url('images/table.webp')"></div><figcaption>The Table</figcaption></figure>
+            <figure><div class="im" style="background-image:url('images/sarie-lounge.webp');background-position:center 40%"></div><figcaption>The Lounge</figcaption></figure>
+          </div>
+          <p class="sub" style="margin-top:.6rem">Two sets in one room. Pick when you book.</p>
           <p class="price">From <b>&pound;99</b>/hr, cameras and operator included</p>
           <a class="go" href="#pricing">See room rates <span class="arw">&rarr;</span></a>
         </div>
@@ -469,7 +405,8 @@
             <li>Captioned social clips from every session</li>
             <li>Titles, thumbnails &amp; posting on our top package</li>
           </ul>
-          <p class="price">Packages from <b>&pound;795</b> a month</p>
+          <p class="sub" style="margin-top:.6rem">Want your own look? We design and build bespoke sets. Heart &amp; Home&rsquo;s set was built here. <a href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20a%20custom%20set%20build" target="_blank" rel="noopener">WhatsApp us</a>.</p>
+          <p class="price">1 recording &rarr; 10+ posts. Packages from <b>&pound;795</b> a month</p>
           <a class="go" href="#pricing">See production packages <span class="arw">&rarr;</span></a>
         </div>
       </div>
@@ -477,53 +414,11 @@
   </div>
 </section>
 
-<!-- ================= THE EDGE ================= -->
-<section class="edge">
-  <div class="wrap edge-grid">
-    <div class="reveal">
-      <span class="eyebrow"><span class="tk">//</span> The Nova edge</span>
-      <h2 class="big serif" style="margin-top:1rem">One session.<br>A month of content.</h2>
-      <p class="lede" style="margin-top:1.2rem">The recording is the easy part. The reason most podcasts stall is everything after: the editing, the clips, the posting. That's exactly where Nova is built to win.</p>
-      <p class="lede" style="margin-top:1rem">Our in-house editing pipeline turns a single recording into a full episode plus a stack of captioned, colour-graded vertical clips. The output of a three-person team, delivered by one studio.</p>
-      <div class="pipeline">
-        <div class="pl-row"><span class="n">REC</span><div class="t"><b>You record</b><span>Show up and have the conversation</span></div></div>
-        <div class="pl-row"><span class="n">CUT</span><div class="t"><b>We find the moments</b><span>The best bits, pulled and tightened</span></div></div>
-        <div class="pl-row"><span class="n">CAP</span><div class="t"><b>Graded &amp; captioned</b><span>House-style captions, colour, motion</span></div></div>
-        <div class="pl-row"><span class="n">OUT</span><div class="t"><b>Ready to post</b><span>Episode + up to 10 clips, titled and packaged</span></div></div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="phones" aria-hidden="true">
-        <div class="phone" style="background-image:var(--img-bts)">
-          <div class="hud"><span class="r"></span>REC</div>
-          <div class="cap">the bit everyone <i>shares</i></div>
-        </div>
-        <div class="phone" style="background-image:var(--img-session)">
-          <div class="hud"><span class="r"></span>REC</div>
-          <div class="cap">one hour in the room <i>ten clips</i> out of it</div>
-        </div>
-        <div class="phone" style="background-image:var(--img-prod)">
-          <div class="hud"><span class="r"></span>REC</div>
-          <div class="cap">posted while it's <i>still warm</i></div>
-        </div>
-      </div>
-      <p class="mono" style="text-align:center;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin-top:1rem">1 recording &rarr; 10+ posts</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= GALLERY BAND ================= -->
-<div class="band">
-  <div class="band-in">
-    <div class="g" style="background-image:var(--img-lounge)"><span>Built for Heart &amp; Home</span></div>
-  </div>
-</div>
-
 <!-- ================= FEATURED ================= -->
 <section id="featured">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><span class="tk">//</span> Featured in the studio</span>
+      <span class="eyebrow">Featured in the studio</span>
       <h2 class="big serif">Faces you&#39;ll recognise.</h2>
       <p class="lede">A few of the guests who&#39;ve pulled up a chair in the room.</p>
     </div>
@@ -537,6 +432,20 @@
       <figure class="face reveal"><img src="images/faces/anya-lawrence.webp" alt="Anya Lawrence at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Anya Lawrence<small>Hollyoaks&rsquo; Vicky Grant since 2022</small></figcaption></figure>
       <figure class="face reveal"><img src="images/faces/angela-lonsdale.webp" alt="Angela Lonsdale at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Angela Lonsdale<small>Coronation Street&rsquo;s Emma Watts</small></figcaption></figure>
     </div>
+
+    <div class="quotes" style="grid-template-columns:1fr 1fr;margin-top:2.2rem">
+      <div class="q reveal">
+        <div class="mk">&ldquo;</div>
+        <p>The response to the podcasts has been incredible and has created some amazing engagement for my fledgling business. I genuinely never realised how exciting podcasts could be to create!</p>
+        <div class="by"><b>Jonathan Hayes</b><span>Google review &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+      </div>
+      <div class="q reveal">
+        <div class="mk">&ldquo;</div>
+        <p>Honestly such an amazing studio. The equipment was really good and everything just looked and felt so professional. It&rsquo;s actually amazing, would definitely recommend it!</p>
+        <div class="by"><b>Charlie Wrenshall</b><span>Google review &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+      </div>
+    </div>
+    <p class="price-note reveal" style="margin-top:1.2rem">Home of <b>Heart &amp; Home with Lisa Hensby</b> and <b>Repeat or Delete with Sarie Taylor</b>, both filmed here. Rated <b>5.0 on Google</b>. <a href="https://www.google.com/maps/place/Nova+Studios/@53.3988657,-2.3598644,17z/data=!4m6!3m5!1s0x487babcb771fefed:0x2cc1fc8edcbab5a0!8m2!3d53.3988657!4d-2.3598644!16s%2Fg%2F11zx08bbz8" target="_blank" rel="noopener">Read the reviews</a>.</p>
   </div>
 </section>
 
@@ -544,26 +453,26 @@
 <section id="pricing">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><span class="tk">//</span> Pricing</span>
+      <span class="eyebrow">Pricing</span>
       <h2 class="big serif">Clear rates. No mystery quotes.</h2>
-      <p class="lede">Hire the room by the hour or the day, or take a production package where we handle the edit and the clips too.</p>
+      <p class="lede">By the hour, by the day, or done for you.</p>
     </div>
 
     <span class="eyebrow reveal" style="display:block;margin-top:2.6rem">Studio hire &middot; audio + video</span>
     <div class="rate">
-      <div class="r reveal"><div class="lbl">Audio + video</div><div class="v">&pound;99</div><div class="u" style="color:var(--ink)">per hour &middot; &pound;160 for 2 hours</div></div>
-      <div class="r reveal"><div class="lbl">Half day</div><div class="v">&pound;300</div><div class="u">4 hours, audio + video</div></div>
-      <div class="r reveal"><div class="lbl">Full day</div><div class="v">&pound;560</div><div class="u">8 hours, audio + video</div></div>
+      <a class="r reveal" href="#book"><div class="lbl">Audio + video</div><div class="v">&pound;99</div><div class="u" style="color:var(--ink)">per hour &middot; &pound;160 for 2 hours</div></a>
+      <a class="r reveal" href="#book"><div class="lbl">Half day</div><div class="v">&pound;300</div><div class="u">4 hours, audio + video</div></a>
+      <a class="r reveal" href="#book"><div class="lbl">Full day</div><div class="v">&pound;560</div><div class="u">8 hours, audio + video</div></a>
       <a class="r reveal book-r" href="#book"><div class="lbl">Ready to record?</div><div class="v" style="font-size:1.3rem;line-height:1.25;margin-top:.55rem">Pick a time, pay online, done</div><div class="u" style="color:#e8b04b">Book now <span class="arw">&rarr;</span></div></a>
     </div>
 
     <div class="pkg-head">
-      <span class="eyebrow reveal">Done-for-you production</span>
+      <span class="eyebrow reveal">Build It With Us &middot; done-for-you production</span>
       <span class="mono reveal" style="font-size:.76rem;color:var(--ink-faint)">Session included &middot; clips included</span>
     </div>
     <div class="packages">
       <div class="pkg reveal">
-        <h3 class="name">Build It With Us Starter</h3>
+        <h3 class="name">Starter</h3>
         <div class="cost">&pound;795<small>/month</small></div>
         <p class="who">Start your show properly, with us doing the heavy lifting.</p>
         <ul>
@@ -576,7 +485,7 @@
       </div>
       <div class="pkg feat reveal">
         <span class="badge">Most popular</span>
-        <h3 class="name">Build It With Us</h3>
+        <h3 class="name">Standard</h3>
         <div class="cost">&pound;1,450<small>/month</small></div>
         <p class="who">Show up, record, stay visible all month.</p>
         <ul>
@@ -588,11 +497,11 @@
         <a class="btn primary" href="#book">Book this package</a>
       </div>
       <div class="pkg reveal">
-        <h3 class="name">Build It With Us Pro</h3>
+        <h3 class="name">Pro</h3>
         <div class="cost">&pound;2,600<small>/month</small></div>
         <p class="who">A properly produced, growing show. Hands off for you.</p>
         <ul>
-          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Everything in Build It With Us</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Everything in Standard</li>
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Multiple sessions &amp; episodes</li>
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Posting &amp; scheduling handled</li>
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Strategy &amp; ongoing support</li>
@@ -600,45 +509,7 @@
         <a class="btn" href="#book">Book Pro</a>
       </div>
     </div>
-    <p class="price-note reveal">All three are in the booking system below, under Build It With Us. Add-ons any time: 10 extra clips &pound;150, full episode edits from &pound;180, custom short-form edits from &pound;80, thumbnails &amp; titles from &pound;40. Not sure which fits? <a href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20talk%20through%20the%20production%20packages" target="_blank" rel="noopener">WhatsApp us</a> and we'll work it out with you.</p>
-  </div>
-</section>
-
-<!-- ================= WORK / PROOF ================= -->
-<section id="work">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="tk">//</span> The work</span>
-      <h2 class="big serif">Built in this room.</h2>
-    </div>
-
-    <div class="featured reveal">
-      <div class="cover"><div class="hh">Heart&nbsp;&amp;&nbsp;Home<small>with Lisa Hensby</small></div></div>
-      <div>
-        <div class="meta">&#9679; Full production &middot; ongoing series</div>
-        <h3 class="serif">Heart &amp; Home</h3>
-        <p>A guest-interview series produced end to end at Nova, filmed in the studio, edited into full episodes, and cut into a run of captioned clips for every drop. Guests so far include Sally Dynevor, Lucy-Jo Hudson, Steph Waring, Ross Adams and Angela Lonsdale. Record once, stay visible all month.</p>
-      </div>
-    </div>
-
-    <div class="quotes">
-      <div class="q reveal" style="border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem">
-        <span class="eyebrow" style="display:block;margin-bottom:.5rem">From the founder</span>
-        <p>I built Nova because getting a show made shouldn't be the hard part. You bring the conversation. We make sure it sounds right, looks right and actually gets seen.</p>
-        <div class="by"><b>Luca Toolan</b><span>Founder, Nova Studios</span></div>
-      </div>
-      <div class="q reveal">
-        <div class="mk">&ldquo;</div>
-        <p>The response to the podcasts has been incredible and has created some amazing engagement for my fledgling business. I genuinely never realised how exciting podcasts could be to create!</p>
-        <div class="by"><b>Jonathan Hayes</b><span>Google review &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-      </div>
-      <div class="q reveal">
-        <div class="mk">&ldquo;</div>
-        <p>Honestly such an amazing studio. The equipment was really good and everything just looked and felt so professional. It&rsquo;s actually amazing, would definitely recommend it!</p>
-        <div class="by"><b>Charlie Wrenshall</b><span>Google review &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-      </div>
-    </div>
-    <p class="price-note reveal" style="margin-top:1.2rem">Rated <b>5.0 on Google</b>. <a href="https://www.google.com/maps/place/Nova+Studios/@53.3988657,-2.3598644,17z/data=!4m6!3m5!1s0x487babcb771fefed:0x2cc1fc8edcbab5a0!8m2!3d53.3988657!4d-2.3598644!16s%2Fg%2F11zx08bbz8" target="_blank" rel="noopener">Read the reviews</a>.</p>
+    <p class="price-note reveal">All three packages are in the booking system below, under Build It With Us. Need extras like more clips or thumbnails? <a href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20add%20some%20extras" target="_blank" rel="noopener">WhatsApp us</a> and we'll sort it.</p>
   </div>
 </section>
 
@@ -646,12 +517,12 @@
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><span class="tk">//</span> How it works</span>
+      <span class="eyebrow">How it works</span>
       <h2 class="big serif">From booking to posting in four steps.</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="num">01</div><h3 class="step-h">Book</h3><p>Book your date online in a couple of minutes. Tell us what your show is and who's on it.</p></div>
-      <div class="step reveal"><div class="num">02</div><h3 class="step-h">Record</h3><p>Turn up and talk. We handle sound, cameras and lighting so you don't have to think about any of it.</p></div>
+      <div class="step reveal"><div class="num">01</div><h3 class="step-h">Book</h3><p>Book your date online in a couple of minutes.</p></div>
+      <div class="step reveal"><div class="num">02</div><h3 class="step-h">Record</h3><p>Turn up and talk. We handle sound, cameras and lighting </p></div>
       <div class="step reveal"><div class="num">03</div><h3 class="step-h">We edit</h3><p>We cut the episode and pull the best moments into captioned, graded clips, usually back within days.</p></div>
       <div class="step reveal"><div class="num">04</div><h3 class="step-h">You grow</h3><p>Post the episode and drip the clips. One session keeps your feed alive for weeks.</p></div>
     </div>
@@ -662,18 +533,15 @@
 <section id="faq">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><span class="tk">//</span> Questions</span>
+      <span class="eyebrow">Questions</span>
       <h2 class="big serif">Good to know.</h2>
     </div>
     <div class="faq reveal">
-      <details><summary>Where are you based? <span class="pm">+</span></summary><p>We're at 4 Craven Court, off Atlantic Street in Altrincham (WA14 5DY), easy to reach from Manchester and the wider North West.</p></details>
-      <details><summary>Can I just hire the room without production? <span class="pm">+</span></summary><p>Absolutely. Plenty of people book the space by the hour or the day, run their own session, and walk out with clean audio and video files the same day. We get you set up and check your levels before you record.</p></details>
+            <details><summary>Can I just hire the room without production? <span class="pm">+</span></summary><p>Absolutely. Plenty of people book the space by the hour or the day, run their own session, and walk out with clean audio and video files the same day. We get you set up and check your levels before you record.</p></details>
       <details><summary>What do I need to bring? <span class="pm">+</span></summary><p>Just yourself and your guests. Mics, mixer, cameras and lighting are all here and ready. Bring notes or a rough running order if you like, and we can help you shape one before you record.</p></details>
       <details><summary>How fast do I get my clips? <span class="pm">+</span></summary><p>Our editing pipeline is built for turnaround. Clip packages usually land within days of the session, packaged and ready to post, and we agree the timeline when you book.</p></details>
-      <details><summary>Do you post the content for me? <span class="pm">+</span></summary><p>On Build It With Us Pro we handle titles, thumbnails, scheduling and posting so it goes out without you lifting a finger. If you'd rather post yourself, we deliver everything named and ready to go.</p></details>
-      <details><summary>I've never recorded a podcast before. Is that fine? <span class="pm">+</span></summary><p>More than fine. A lot of our clients are first-timers. No performance, just conversations. We'll make the room feel easy and get the best out of you.</p></details>
-      <details class="reveal"><summary>What are your hours?</summary><p>Sessions run 8am to 5pm, Monday to Saturday. Want an evening? Message us on WhatsApp and we'll see what we can do.</p></details>
-      <details class="reveal"><summary>How many people can record at once?</summary><p>Up to four on mics at the table set, and two or three on the lounge set. Tell us your setup when you book and it's ready when you arrive.</p></details>
+            <details><summary>I've never recorded a podcast before. Is that fine? <span class="pm">+</span></summary><p>More than fine. A lot of our clients are first-timers. No performance, just conversations. We'll make the room feel easy and get the best out of you.</p></details>
+      <details class="reveal"><summary>Sessions, hours and capacity <span class="pm">+</span></summary><p>Sessions run 8am to 5pm, Monday to Saturday, with up to four on mics at the table set and two or three on the lounge. Want an evening? Message us on WhatsApp.</p></details>
     </div>
   </div>
 </section>
@@ -692,16 +560,8 @@
     <div class="hero-cta reveal" style="margin-top:1.4rem">
       <a class="btn ghost" href="https://sumupbookings.com/the-nova-studios" target="_blank" rel="noopener">Open booking in a new tab <span class="arw">&rarr;</span></a>
       <a class="btn ghost" href="https://wa.me/447761075775" target="_blank" rel="noopener">WhatsApp us</a>
-      <a class="btn ghost" href="tel:+447761075775">Call 07761 075775</a>
-      <a class="btn ghost" href="mailto:info@thenovastudios.co.uk?subject=Studio%20booking%20enquiry">Email the studio</a>
     </div>
-    <div class="contactline reveal">
-      <span>4 Craven Court, Altrincham WA14 5DY</span>
-      <a href="tel:+447761075775">07761 075775</a>
-      <a href="mailto:info@thenovastudios.co.uk">info@thenovastudios.co.uk</a>
-        <a href="https://wa.me/447761075775" target="_blank" rel="noopener">WhatsApp: 07761 075775</a>
-    </div>
-  </div>
+      </div>
 </div>
 
 </main>
@@ -719,7 +579,7 @@
         <a href="#production">Build it with us</a>
         <a href="#pricing">Pricing</a>
         <a href="#book">Book a session</a>
-        <a href="#work">The work</a>
+        <a href="#featured">Faces you&rsquo;ll recognise</a>
         <a href="https://www.instagram.com/itsnovastudios" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.tiktok.com/@itsnovastudios" target="_blank" rel="noopener">TikTok</a>
       </div>
