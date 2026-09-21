@@ -205,8 +205,8 @@
 
   /* ---- gallery band ---- */
   .band{padding:0;border-block:1px solid var(--line-2)}
-  .band-in{display:grid;grid-template-columns:1.4fr 1fr;gap:4px;height:min(46vw,420px)}
-  @media(max-width:720px){.band-in{grid-template-columns:1fr;height:auto}.band-in .g{height:50vw}}
+  .band-in{display:grid;grid-template-columns:1fr;gap:4px;height:min(40vw,380px)}
+  @media(max-width:720px){.band-in{height:auto}.band-in .g{height:50vw}}
   .band .g{background-size:cover;background-position:center;position:relative;overflow:hidden;filter:saturate(.9)}
   .band .g:hover{filter:saturate(1.08)}
   .band .g::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,17,8,.75))}
@@ -307,7 +307,7 @@
 
   /* anchor offset for sticky header */
   section[id],div[id]{scroll-margin-top:84px}
-@media (max-width:560px){.phones{gap:.6rem}.phone{width:clamp(86px,26vw,150px)}.phone:nth-child(2){width:clamp(95px,29vw,165px)}.phone .cap{font-size:.68rem}}.skip{position:absolute;left:-9999px;top:0;background:#e8b04b;color:#141810;padding:.6rem 1.1rem;z-index:100;font-weight:600}.skip:focus{left:0}main p a,main li a,.foot-col a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}h3.name{margin:0;font-size:inherit;font-weight:inherit;font-family:inherit}.paths .wide{grid-column:1/-1}.paths .wide .ph{height:300px}.faces{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:2.4rem}.face{margin:0}.face img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block;filter:saturate(.95)}.face figcaption{font-family:ui-monospace,Menlo,monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-top:.55rem;text-align:center}
+@media (max-width:560px){.phones{gap:.6rem}.phone{width:clamp(86px,26vw,150px)}.phone:nth-child(2){width:clamp(95px,29vw,165px)}.phone .cap{font-size:.68rem}}.skip{position:absolute;left:-9999px;top:0;background:#e8b04b;color:#141810;padding:.6rem 1.1rem;z-index:100;font-weight:600}.skip:focus{left:0}main p a,main li a,.foot-col a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}h3.name{margin:0;font-size:inherit;font-weight:inherit;font-family:inherit}.paths .wide{grid-column:1/-1}.paths .wide .ph{height:300px}.faces{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:.8rem;margin-top:2.2rem}.face{margin:0}.face img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block;filter:saturate(.95)}.face figcaption{font-family:ui-monospace,Menlo,monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-top:.55rem;text-align:center}
 .face figcaption small{display:block;font-size:.6rem;letter-spacing:.08em;text-transform:none;color:var(--ink-faint);margin-top:.25rem}
 .rate a.r{display:block;text-decoration:none;color:inherit;border-color:rgba(232,169,75,.45);background:linear-gradient(160deg,rgba(232,169,75,.14),rgba(232,169,75,.04))}
 .rate a.r:hover{border-color:rgba(232,169,75,.8)}
@@ -516,9 +516,29 @@
 <div class="band">
   <div class="band-in">
     <div class="g" style="background-image:var(--img-lounge)"><span>Built for Heart &amp; Home</span></div>
-    <div class="g" style="background-image:var(--img-bts)"><span>On air</span></div>
   </div>
 </div>
+
+<!-- ================= FEATURED ================= -->
+<section id="featured">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="tk">//</span> Featured in the studio</span>
+      <h2 class="big serif">Faces you&#39;ll recognise.</h2>
+      <p class="lede">A few of the guests who&#39;ve pulled up a chair in the room.</p>
+    </div>
+    <div class="faces">
+      <figure class="face reveal"><img src="images/faces/catherine-tyldesley.webp" alt="Catherine Tyldesley recording Repeat or Delete at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Catherine Tyldesley<small>Coronation Street&rsquo;s Eva Price</small></figcaption></figure>
+      <figure class="face reveal"><img src="images/faces/hayley-tamaddon.webp" alt="Hayley Tamaddon recording Repeat or Delete at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Hayley Tamaddon<small>Coronation Street&rsquo;s Andrea Beckett</small></figcaption></figure>
+      <figure class="face reveal"><img src="images/faces/chris-geere.webp" alt="Chris Geere recording Repeat or Delete at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Chris Geere<small>You&rsquo;re the Worst &amp; This Is Us</small></figcaption></figure>
+      <figure class="face reveal"><img src="images/faces/lindsey-kane.webp" alt="Lindsey Kane recording Repeat or Delete at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Lindsey Kane<small>Founder &amp; CEO of JOLT</small></figcaption></figure>
+      <figure class="face reveal"><img src="images/faces/sally-dynevor.webp" alt="Sally Dynevor at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Sally Dynevor<small>Coronation Street&rsquo;s Sally Webster since 1986</small></figcaption></figure>
+      <figure class="face reveal"><img src="images/faces/lucy-jo-hudson.webp" alt="Lucy-Jo Hudson at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Lucy-Jo Hudson<small>Coronation Street&rsquo;s Katy Harris</small></figcaption></figure>
+      <figure class="face reveal"><img src="images/faces/anya-lawrence.webp" alt="Anya Lawrence at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Anya Lawrence<small>Hollyoaks&rsquo; Vicky Grant since 2022</small></figcaption></figure>
+      <figure class="face reveal"><img src="images/faces/angela-lonsdale.webp" alt="Angela Lonsdale at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Angela Lonsdale<small>Coronation Street&rsquo;s Emma Watts</small></figcaption></figure>
+    </div>
+  </div>
+</section>
 
 <!-- ================= PRICING ================= -->
 <section id="pricing">
@@ -619,27 +639,6 @@
       </div>
     </div>
     <p class="price-note reveal" style="margin-top:1.2rem">Rated <b>5.0 on Google</b>. <a href="https://www.google.com/maps/place/Nova+Studios/@53.3988657,-2.3598644,17z/data=!4m6!3m5!1s0x487babcb771fefed:0x2cc1fc8edcbab5a0!8m2!3d53.3988657!4d-2.3598644!16s%2Fg%2F11zx08bbz8" target="_blank" rel="noopener">Read the reviews</a>.</p>
-  </div>
-</section>
-
-<!-- ================= FEATURED ================= -->
-<section id="featured">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="tk">//</span> Featured in the studio</span>
-      <h2 class="big serif">Faces you&#39;ll recognise.</h2>
-      <p class="lede">A few of the guests who&#39;ve pulled up a chair in the room.</p>
-    </div>
-    <div class="faces">
-      <figure class="face reveal"><img src="images/faces/catherine-tyldesley.webp" alt="Catherine Tyldesley recording Repeat or Delete at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Catherine Tyldesley<small>Coronation Street&rsquo;s Eva Price</small></figcaption></figure>
-      <figure class="face reveal"><img src="images/faces/hayley-tamaddon.webp" alt="Hayley Tamaddon recording Repeat or Delete at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Hayley Tamaddon<small>Coronation Street&rsquo;s Andrea Beckett</small></figcaption></figure>
-      <figure class="face reveal"><img src="images/faces/chris-geere.webp" alt="Chris Geere recording Repeat or Delete at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Chris Geere<small>You&rsquo;re the Worst &amp; This Is Us</small></figcaption></figure>
-      <figure class="face reveal"><img src="images/faces/lindsey-kane.webp" alt="Lindsey Kane recording Repeat or Delete at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Lindsey Kane<small>Founder &amp; CEO of JOLT</small></figcaption></figure>
-      <figure class="face reveal"><img src="images/faces/sally-dynevor.webp" alt="Sally Dynevor at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Sally Dynevor<small>Coronation Street&rsquo;s Sally Webster since 1986</small></figcaption></figure>
-      <figure class="face reveal"><img src="images/faces/lucy-jo-hudson.webp" alt="Lucy-Jo Hudson at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Lucy-Jo Hudson<small>Coronation Street&rsquo;s Katy Harris</small></figcaption></figure>
-      <figure class="face reveal"><img src="images/faces/anya-lawrence.webp" alt="Anya Lawrence at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Anya Lawrence<small>Hollyoaks&rsquo; Vicky Grant since 2022</small></figcaption></figure>
-      <figure class="face reveal"><img src="images/faces/angela-lonsdale.webp" alt="Angela Lonsdale at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Angela Lonsdale<small>Coronation Street&rsquo;s Emma Watts</small></figcaption></figure>
-    </div>
   </div>
 </section>
 
