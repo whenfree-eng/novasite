@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://thenovastudios.co.uk/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://thenovastudios.co.uk/">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Nova Studios", "url": "https://thenovastudios.co.uk/", "telephone": "+447761075775", "email": "info@thenovastudios.co.uk", "image": "https://thenovastudios.co.uk/og.jpg", "priceRange": "\u00a399-\u00a3560", "address": {"@type": "PostalAddress", "streetAddress": "4 Craven Court, Off Atlantic Street", "addressLocality": "Altrincham", "postalCode": "WA14 5DY", "addressCountry": "GB"}, "areaServed": "Greater Manchester", "sameAs": ["https://www.instagram.com/itsnovastudios", "https://www.tiktok.com/@itsnovastudios"], "geo": {"@type": "GeoCoordinates", "latitude": 53.3934, "longitude": -2.3607}, "openingHours": "Mo-Sa 08:00-17:00"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Nova Studios", "url": "https://thenovastudios.co.uk/", "telephone": "+447761075775", "email": "info@thenovastudios.co.uk", "image": "https://thenovastudios.co.uk/og.jpg", "priceRange": "\u00a399-\u00a32600", "address": {"@type": "PostalAddress", "streetAddress": "4 Craven Court, Off Atlantic Street", "addressLocality": "Altrincham", "postalCode": "WA14 5DY", "addressCountry": "GB"}, "areaServed": "Greater Manchester", "sameAs": ["https://www.instagram.com/itsnovastudios", "https://www.tiktok.com/@itsnovastudios"], "geo": {"@type": "GeoCoordinates", "latitude": 53.3934, "longitude": -2.3607}, "openingHours": "Mo-Sa 08:00-17:00"}</script>
 
 
 <meta name="description" content="A private podcast and video studio in Altrincham. Use the room, or we build your whole show: filmed, edited, and turned into a month of clips."/>
@@ -205,8 +205,8 @@
 
   /* ---- gallery band ---- */
   .band{padding:0;border-block:1px solid var(--line-2)}
-  .band-in{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:4px;height:min(46vw,420px)}
-  @media(max-width:720px){.band-in{grid-template-columns:1fr 1fr;height:auto}.band-in .g:first-child{grid-column:1/-1;height:56vw}.band-in .g{height:44vw}}
+  .band-in{display:grid;grid-template-columns:1.4fr 1fr;gap:4px;height:min(46vw,420px)}
+  @media(max-width:720px){.band-in{grid-template-columns:1fr;height:auto}.band-in .g{height:50vw}}
   .band .g{background-size:cover;background-position:center;position:relative;overflow:hidden;filter:saturate(.9)}
   .band .g:hover{filter:saturate(1.08)}
   .band .g::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,17,8,.75))}
@@ -297,7 +297,7 @@
   /* ---- footer ---- */
   footer{background:var(--ground-3);border-top:1px solid var(--line-2)}
   .foot-in{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start;padding:3rem 0}
-  .foot-brand .mark{height:56px;margin-bottom:1rem}
+  .foot-brand .mark{height:56px;width:auto;margin-bottom:1rem}
   .foot-brand p{color:var(--ink-faint);font-size:.85rem;max-width:34ch}
   .foot-cols{display:flex;gap:3.4rem;flex-wrap:wrap}
   .foot-col h3.foot-h{font-family:ui-monospace,Menlo,monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 .9rem}
@@ -308,6 +308,7 @@
   /* anchor offset for sticky header */
   section[id],div[id]{scroll-margin-top:84px}
 @media (max-width:560px){.phones{gap:.6rem}.phone{width:clamp(86px,26vw,150px)}.phone:nth-child(2){width:clamp(95px,29vw,165px)}.phone .cap{font-size:.68rem}}.skip{position:absolute;left:-9999px;top:0;background:#e8b04b;color:#141810;padding:.6rem 1.1rem;z-index:100;font-weight:600}.skip:focus{left:0}main p a,main li a,.foot-col a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}h3.name{margin:0;font-size:inherit;font-weight:inherit;font-family:inherit}.paths .wide{grid-column:1/-1}.paths .wide .ph{height:300px}.faces{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:2.4rem}.face{margin:0}.face img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block;filter:saturate(.95)}.face figcaption{font-family:ui-monospace,Menlo,monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-top:.55rem;text-align:center}
+.face figcaption small{display:block;font-size:.6rem;letter-spacing:.08em;text-transform:none;color:var(--ink-faint);margin-top:.25rem}
 .rate a.r{display:block;text-decoration:none;color:inherit;border-color:rgba(232,169,75,.45);background:linear-gradient(160deg,rgba(232,169,75,.14),rgba(232,169,75,.04))}
 .rate a.r:hover{border-color:rgba(232,169,75,.8)}
 .bookframe{margin:2.2rem auto 0;max-width:960px;background:#fdfcf9;border-radius:18px;border:1px solid rgba(241,233,214,.28);overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.45)}
@@ -342,16 +343,16 @@
   <canvas id="wave" aria-hidden="true"></canvas>
   <div class="wrap hero-in">
     <span class="onair"><span class="dot"></span> On air &middot; Altrincham</span>
-    <h1 class="hero-h serif">Walk in with an idea. Walk out with a show. <em>And the clips to grow it.</em></h1>
-    <p class="lede">Nova Studios is a private podcast &amp; video room in Altrincham. Hire the space and run your own session, or hand us the whole thing. We film it, edit it, and turn one recording into a month of scroll-stopping clips.</p>
+    <h1 class="hero-h serif">Your podcast. <em>From first idea to launch.</em></h1>
+    <p class="lede">Hire our Altrincham studio, or work with us on your set, filming, editing and launch strategy, including social clips.</p>
     <div class="hero-cta">
       <a class="btn primary" href="#book">Book the studio <span class="arw">&rarr;</span></a>
-      <a class="btn ghost" href="#production">See how we build shows <span class="arw">&rarr;</span></a>
+      <a class="btn ghost" href="#production">Build your show with us <span class="arw">&rarr;</span></a>
     </div>
     <div class="hero-meta">
       <div class="m"><b>Two sets</b><span>One treated room</span></div>
       <div class="m"><b>Multi-cam</b><span>Filmed &amp; lit</span></div>
-      <div class="m"><b>10+</b><span>Posts per session</span></div>
+      <div class="m"><b>Clips</b><span>Cut &amp; captioned</span></div>
       <div class="m"><b>From &pound;99</b><span>Per hour</span></div>
     </div>
   </div>
@@ -408,11 +409,11 @@
         </div>
       </div>
       <div class="path wide reveal">
-        <div class="ph" style="background-image:var(--img-lounge)"></div>
+        <div class="ph" style="background-image:url('images/custombrand.webp');background-position:center 25%"></div>
         <div class="body">
-          <span class="tag">&#9679; Custom builds</span>
+          <span class="tag">&#9679; Custom builds &middot; example mock-up</span>
           <h3>Or we build you a set of your own</h3>
-          <p class="sub">Want your show to have its own look? We design and build bespoke sets in the room. This one is Heart &amp; Home with Lisa Hensby: built for her show with furniture from Arighi Bianchi, and every episode films on it.</p>
+          <p class="sub">Want your show to have its own look? We design and build bespoke sets in the room, like the one we built for Heart &amp; Home with Lisa Hensby with furniture from Arighi Bianchi. The board above is a mock-up to show the idea: your logo, on the wall, on every episode.</p>
           <a class="go" href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20a%20custom%20set%20build" target="_blank" rel="noopener">Ask about a custom set on WhatsApp <span class="arw">&rarr;</span></a>
         </div>
       </div>
@@ -451,14 +452,14 @@
         <div class="body">
           <span class="tag">&#9679; Build it with us</span>
           <h3>Full production</h3>
-          <p class="sub">You bring the conversation. We shape it, film it, edit it, and turn it into content that actually grows the show.</p>
+          <p class="sub">You bring the conversation. We film it, edit it and help you launch it.</p>
           <ul>
-            <li>Format &amp; run-of-show help before you record</li>
+            <li>Launch planning, worked out with you</li>
             <li>Filmed session, then a fully edited episode</li>
-            <li>Up to 10 captioned, graded vertical clips per session</li>
+            <li>Captioned social clips from every session</li>
             <li>Titles, thumbnails &amp; posting on our top package</li>
           </ul>
-          <p class="price">Packages from <b>&pound;250</b></p>
+          <p class="price">Packages from <b>&pound;795</b> a month</p>
           <a class="go" href="#pricing">See production packages <span class="arw">&rarr;</span></a>
         </div>
       </div>
@@ -504,7 +505,6 @@
 <!-- ================= GALLERY BAND ================= -->
 <div class="band">
   <div class="band-in">
-    <div class="g" style="background-image:var(--img-hero)"><span>The room</span></div>
     <div class="g" style="background-image:var(--img-lounge)"><span>Built for Heart &amp; Home</span></div>
     <div class="g" style="background-image:var(--img-bts)"><span>On air</span></div>
   </div>
@@ -533,43 +533,44 @@
     </div>
     <div class="packages">
       <div class="pkg reveal">
-        <h3 class="name">Starter</h3>
-        <div class="cost">&pound;250</div>
-        <p class="who">Test the format and see yourself on camera.</p>
+        <h3 class="name">Build It With Us Starter</h3>
+        <div class="cost">&pound;795<small>/month</small></div>
+        <p class="who">Start your show properly, with us doing the heavy lifting.</p>
         <ul>
-          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> One recording session</li>
-          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> One fully edited episode</li>
-          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 2 to 3 captioned clips</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Monthly recording session in the studio</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Fully edited episode</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Captioned social clips</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Launch planning with you</li>
         </ul>
-        <a class="btn" href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20go%20with%20the%20Starter%20package" target="_blank" rel="noopener">Choose Starter</a>
+        <a class="btn" href="#book">Book Starter</a>
       </div>
       <div class="pkg feat reveal">
         <span class="badge">Most popular</span>
-        <h3 class="name">Growth</h3>
-        <div class="cost">&pound;400</div>
-        <p class="who">Show up once a month, stay visible all month.</p>
+        <h3 class="name">Build It With Us</h3>
+        <div class="cost">&pound;1,450<small>/month</small></div>
+        <p class="who">Show up, record, stay visible all month.</p>
         <ul>
-          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> One recording session</li>
-          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Fully edited episode</li>
-          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 5 to 10 captioned, graded clips</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Everything in Starter</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> More studio time each month</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Full clip package, titles &amp; thumbnails</li>
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Delivered named, ready to post</li>
         </ul>
-        <a class="btn primary" href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20go%20with%20the%20Growth%20package" target="_blank" rel="noopener">Choose Growth</a>
+        <a class="btn primary" href="#book">Book this package</a>
       </div>
       <div class="pkg reveal">
-        <h3 class="name">Premium</h3>
-        <div class="cost">&pound;800<small>+</small></div>
+        <h3 class="name">Build It With Us Pro</h3>
+        <div class="cost">&pound;2,600<small>/month</small></div>
         <p class="who">A properly produced, growing show. Hands off for you.</p>
         <ul>
-          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Everything in Growth</li>
-          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Multiple episodes / retainer</li>
-          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Full clip volume + scheduling</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Everything in Build It With Us</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Multiple sessions &amp; episodes</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Posting &amp; scheduling handled</li>
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5 5.5 11 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Strategy &amp; ongoing support</li>
         </ul>
-        <a class="btn" href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20talk%20through%20the%20Premium%20package" target="_blank" rel="noopener">Talk it through</a>
+        <a class="btn" href="#book">Book Pro</a>
       </div>
     </div>
-    <p class="price-note reveal">Add-ons any time: extra clips (3 for &pound;60, 6 for &pound;100, 10 for &pound;150), full episode edits from &pound;180, custom short-form from &pound;80, thumbnails &amp; titles from &pound;40. Every package is built around what your show actually needs. Tell us and we'll shape it.</p>
+    <p class="price-note reveal">All three are in the booking system below, under Build It With Us. Add-ons any time: 10 extra clips &pound;150, full episode edits from &pound;180, custom short-form edits from &pound;80, thumbnails &amp; titles from &pound;40. Not sure which fits? <a href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20talk%20through%20the%20production%20packages" target="_blank" rel="noopener">WhatsApp us</a> and we'll work it out with you.</p>
   </div>
 </section>
 
@@ -598,15 +599,16 @@
       </div>
       <div class="q reveal">
         <div class="mk">&ldquo;</div>
-        <p>Working with Nova Studios was an absolute pleasure from start to finish. Booking the studio was incredibly straightforward through their online system.</p>
-        <div class="by"><b>Douglas Stenhouse</b><span>Videographer</span></div>
+        <p>The response to the podcasts has been incredible and has created some amazing engagement for my fledgling business. I genuinely never realised how exciting podcasts could be to create!</p>
+        <div class="by"><b>Jonathan Hayes</b><span>Google review &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
       </div>
       <div class="q reveal">
         <div class="mk">&ldquo;</div>
-        <p>Highly recommend. The team was responsive and made the entire process seamless from booking to final files.</p>
-        <div class="by"><b>Mike Shaft</b><span>Broadcaster</span></div>
+        <p>Honestly such an amazing studio. The equipment was really good and everything just looked and felt so professional. It&rsquo;s actually amazing, would definitely recommend it!</p>
+        <div class="by"><b>Charlie Wrenshall</b><span>Google review &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
       </div>
     </div>
+    <p class="price-note reveal" style="margin-top:1.2rem">Rated <b>5.0 on Google</b>. <a href="https://www.google.com/maps/place/Nova+Studios/@53.3988657,-2.3598644,17z/data=!4m6!3m5!1s0x487babcb771fefed:0x2cc1fc8edcbab5a0!8m2!3d53.3988657!4d-2.3598644!16s%2Fg%2F11zx08bbz8" target="_blank" rel="noopener">Read the reviews</a>.</p>
   </div>
 </section>
 
@@ -619,11 +621,10 @@
       <p class="lede">A few of the guests who&#39;ve pulled up a chair in the room.</p>
     </div>
     <div class="faces">
-      <figure class="face reveal"><img src="images/faces/sally-dynevor.webp" alt="Sally Dynevor at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Sally Dynevor</figcaption></figure>
-      <figure class="face reveal"><img src="images/faces/lucy-jo-hudson.webp" alt="Lucy-Jo Hudson at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Lucy-Jo Hudson</figcaption></figure>
-      <figure class="face reveal"><img src="images/faces/anya-lawrence.webp" alt="Anya Lawrence at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Anya Lawrence</figcaption></figure>
-      <figure class="face reveal"><img src="images/faces/angela-lonsdale.webp" alt="Angela Lonsdale at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Angela Lonsdale</figcaption></figure>
-      <figure class="face reveal"><img src="images/faces/lisa-hensby.webp" alt="Lisa Hensby at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Lisa Hensby</figcaption></figure>
+      <figure class="face reveal"><img src="images/faces/sally-dynevor.webp" alt="Sally Dynevor at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Sally Dynevor<small>Coronation Street&rsquo;s Sally Webster since 1986</small></figcaption></figure>
+      <figure class="face reveal"><img src="images/faces/lucy-jo-hudson.webp" alt="Lucy-Jo Hudson at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Lucy-Jo Hudson<small>Coronation Street&rsquo;s Katy Harris</small></figcaption></figure>
+      <figure class="face reveal"><img src="images/faces/anya-lawrence.webp" alt="Anya Lawrence at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Anya Lawrence<small>Hollyoaks&rsquo; Vicky Grant since 2022</small></figcaption></figure>
+      <figure class="face reveal"><img src="images/faces/angela-lonsdale.webp" alt="Angela Lonsdale at Nova Studios" loading="lazy" width="640" height="640"><figcaption>Angela Lonsdale<small>Coronation Street&rsquo;s Emma Watts</small></figcaption></figure>
     </div>
   </div>
 </section>
@@ -656,7 +657,7 @@
       <details><summary>Can I just hire the room without production? <span class="pm">+</span></summary><p>Absolutely. Plenty of people book the space by the hour or the day, run their own session, and walk out with clean audio and video files the same day. We get you set up and check your levels before you record.</p></details>
       <details><summary>What do I need to bring? <span class="pm">+</span></summary><p>Just yourself and your guests. Mics, mixer, cameras and lighting are all here and ready. Bring notes or a rough running order if you like, and we can help you shape one before you record.</p></details>
       <details><summary>How fast do I get my clips? <span class="pm">+</span></summary><p>Our editing pipeline is built for turnaround. Clip packages usually land within days of the session, packaged and ready to post, and we agree the timeline when you book.</p></details>
-      <details><summary>Do you post the content for me? <span class="pm">+</span></summary><p>On Premium we handle titles, thumbnails and scheduling so it goes out without you lifting a finger. If you'd rather post yourself, we deliver everything named and ready to go.</p></details>
+      <details><summary>Do you post the content for me? <span class="pm">+</span></summary><p>On Build It With Us Pro we handle titles, thumbnails, scheduling and posting so it goes out without you lifting a finger. If you'd rather post yourself, we deliver everything named and ready to go.</p></details>
       <details><summary>I've never recorded a podcast before. Is that fine? <span class="pm">+</span></summary><p>More than fine. A lot of our clients are first-timers. No performance, just conversations. We'll make the room feel easy and get the best out of you.</p></details>
       <details class="reveal"><summary>What are your hours?</summary><p>Sessions run 8am to 5pm, Monday to Saturday. Want an evening? Message us on WhatsApp and we'll see what we can do.</p></details>
       <details class="reveal"><summary>How many people can record at once?</summary><p>Up to four on mics at the table set, and two or three on the lounge set. Tell us your setup when you book and it's ready when you arrive.</p></details>
