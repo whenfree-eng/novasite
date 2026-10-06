@@ -137,6 +137,15 @@
   .hero-meta .m b{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:1.55rem;letter-spacing:-.02em}
   .hero-meta .m span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
 
+  /* Keep the whole landscape photo visible on phones, above the copy. */
+  @media(max-width:700px){
+    .hero{min-height:0;justify-content:flex-start}
+    .hero .photo{position:relative;inset:auto;width:100%;aspect-ratio:16/9;flex-shrink:0;background-position:center;background-size:contain;transform:none;animation:none}
+    .hero .shade{display:none}
+    .hero-in{padding:2rem 0 3rem}
+    .hero-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;margin-top:2rem}
+  }
+
   /* ============ TICKER ============ */
   .ticker{border-block:1px solid var(--line-2);background:var(--ground-3);overflow:hidden;position:relative}
   .ticker .lane{display:flex;gap:0;width:max-content}
