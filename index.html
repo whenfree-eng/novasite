@@ -231,6 +231,12 @@
   .rate .r .v{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:2rem;margin-top:.45rem;letter-spacing:-.02em}
   .rate .r .u{font-size:.8rem;color:var(--ink-dim);margin-top:.1rem}
   .pkg-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-top:3.2rem;flex-wrap:wrap}
+  .edit-menu{margin:1.4rem 0 0}
+  .edit-menu>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem 1.4rem;padding:1.2rem 0;border-bottom:1px solid var(--line)}
+  .edit-menu dt{font-weight:600}
+  .edit-menu dd{margin:0}
+  .edit-menu .cost{color:var(--accent-hot);white-space:nowrap}
+  .edit-menu .detail{grid-column:1/-1;max-width:72ch;font-size:.92rem;color:var(--ink-dim)}
   .packages{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.6rem}
   @media(max-width:860px){.packages{grid-template-columns:1fr}}
   .pkg{position:relative;border:1px solid var(--line);border-radius:22px;padding:1.8rem 1.6rem;background:var(--card);
@@ -609,7 +615,19 @@
         <a class="btn" href="#book">Book Pro</a>
       </div>
     </div>
-    <p class="price-note reveal">All three are in the booking system below, under Build It With Us. Add-ons any time: 10 extra clips &pound;150, full episode edits from &pound;180, custom short-form edits from &pound;80, thumbnails &amp; titles from &pound;40. Not sure which fits? <a href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20to%20talk%20through%20the%20production%20packages" target="_blank" rel="noopener">WhatsApp us</a> and we'll work it out with you.</p>
+    <p class="price-note reveal">All three monthly packages are in the booking system below, under Build It With Us. We'll confirm your recording schedule and the content included before work begins.</p>
+    <div id="editing" class="reveal">
+      <div class="pkg-head"><h3 class="serif">Editing &amp; content extras</h3></div>
+      <p class="price-note">Choose the finished content you need. Studio hire is separate; check what's already included in your production package before adding extras.</p>
+      <dl class="edit-menu">
+        <div><dt>Social clips: pack of 10</dt><dd class="cost">&pound;150</dd><dd class="detail">Ten short clips from your recording for TikTok, Reels or Shorts. Choose this for a batch of social content; a full episode edit is separate.</dd></div>
+        <div><dt>Full podcast episode edit</dt><dd class="cost">From &pound;180</dd><dd class="detail">Your complete episode, with camera switching, clean cuts, pacing and balanced audio, ready to upload. Social clips are separate.</dd></div>
+        <div><dt>Bespoke promo edit</dt><dd class="cost">From &pound;80</dd><dd class="detail">A custom short video for a promotion or specific content idea, with creative cuts and captions. Choose this for a bespoke piece rather than a batch of episode clips.</dd></div>
+        <div><dt>Thumbnails &amp; titles</dt><dd class="cost">From &pound;40</dd><dd class="detail">Thumbnail design and title writing to help present your content. We agree the quantity and platform with you.</dd></div>
+      </dl>
+      <p class="price-note">Tell us your footage length, preferred style, platforms and deadline. We'll confirm the deliverables, price and turnaround before editing starts. <a href="https://wa.me/447761075775?text=Hi%2C%20I%27d%20like%20help%20choosing%20editing%20for%20my%20Nova%20recording.%20I%20need%3A%20%5Bfull%20episode%20%2F%2010%20social%20clips%20%2F%20bespoke%20promo%20%2F%20thumbnails%20and%20titles%5D.%20My%20deadline%20is%3A" target="_blank" rel="noopener">Discuss your edit on WhatsApp</a>.</p>
+      <p class="price-note"><strong>Studio extra:</strong> teleprompter hire is &pound;45 flat per booking, alongside your studio session.</p>
+    </div>
   </div>
 </section>
 
