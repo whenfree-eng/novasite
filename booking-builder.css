@@ -104,3 +104,28 @@
 #session-pricing .summary{top:100px}
 
 #session-pricing .other section{padding:0}
+
+#session-pricing .builder{scroll-margin-top:100px}
+#session-pricing .examples{margin:0 0 2rem;display:flex;flex-wrap:wrap;gap:.65rem}
+#session-pricing .examples p{width:100%;color:var(--muted);font-size:.85rem}
+#session-pricing .examples button{border:1px solid var(--line);background:transparent;color:var(--ink);padding:.8rem 1rem;border-radius:8px;text-align:left;cursor:pointer;font-size:.85rem}
+#session-pricing .examples strong{display:block;color:var(--gold);margin-top:.2rem}
+#session-pricing .examples button:hover{background:var(--panel);border-color:var(--gold)}
+#session-pricing .intro-note{margin:-.4rem 0 1rem}
+#session-pricing .service-inclusions{margin:0 1.15rem 1rem 3.3rem;font-size:.82rem;color:var(--muted)}
+#session-pricing .service-detail{padding:.85rem 1.15rem}
+#session-pricing .service-detail summary{font-size:.82rem;font-weight:500;min-height:24px;display:flex;justify-content:space-between;gap:.8rem}
+#session-pricing .service-detail a{color:var(--gold);text-decoration:underline}
+#session-pricing .customise{display:block;border-top:1px solid var(--line);margin:0 1.15rem 1rem;padding-top:1rem;font-size:.82rem;cursor:pointer}
+#session-pricing .customise input,#session-pricing .clip-sizes input{accent-color:var(--gold);margin-right:.35rem}
+#session-pricing .customise small{display:block;color:var(--muted);margin:.4rem 0 0 1.3rem}
+#session-pricing .clip-sizes{padding:0 1.15rem;margin:.5rem 0 1rem;display:flex;gap:.7rem;flex-wrap:wrap}
+#session-pricing .clip-sizes legend{font-size:.83rem;font-weight:500;margin-bottom:.7rem}
+#session-pricing .clip-sizes label{flex:1;border:1px solid var(--line);padding:.8rem;border-radius:8px;font-size:.83rem;cursor:pointer}
+#session-pricing .clip-sizes label:has(input:checked){border-color:var(--gold)}
+#session-pricing .clip-sizes strong{display:block;margin-top:.3rem;color:var(--gold)}
+#session-pricing .copy-summary{border:1px solid #697562;background:transparent;color:var(--dark);border-radius:8px;padding:.65rem;cursor:pointer;font-size:.85rem}
+#session-pricing .copy-status{font-size:.8rem}
+#session-pricing .copy-status:empty{display:none}
+#session-pricing .brief-label{margin-top:1.4rem}
+@media(max-width:760px){#session-pricing .examples{display:grid;grid-template-columns:1fr}#session-pricing .service-inclusions{margin-left:2.95rem;margin-right:1rem}#session-pricing .clip-sizes{padding:0 1rem}#session-pricing .customise{margin-left:1rem;margin-right:1rem}}

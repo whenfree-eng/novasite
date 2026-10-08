@@ -1,4 +1,4 @@
-/* Build a quote locally. No customer details leave the page until they open an enquiry. */
+/* Quotes stay in the browser until a customer opens their chosen enquiry channel. */
 (function () {
   const form = document.getElementById('session-builder');
   if (!form) return;
@@ -7,8 +7,8 @@
   const action = byId('session-action');
   const emailAction = byId('email-action');
   const rates = { 1: 99, 2: 160, 4: 300, 8: 560 };
-  const serviceNames = { 1: 'Room Only 1 Hour', 2: 'Room Only 2 Hours', 4: 'Room Only 4 Hours (Half Day)', 8: 'Room Only 8 Hours (Full Day)' };
   const pounds = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 });
+  let bookingSummary = '';
 
   function quantity(id, enabled) {
     const input = byId(id + '-count');
@@ -23,84 +23,79 @@
   }
 
   function clearActions(message) {
+    bookingSummary = '';
     quote.textContent = message;
     byId('mobile-price').textContent = 'Choose edits';
     byId('summary-actions').hidden = true;
     action.removeAttribute('href');
     emailAction.removeAttribute('href');
-    byId('handoff-note').textContent = '';
   }
 
   function update() {
+    byId('copy-status').textContent = '';
     const editingOnly = form.querySelector('input[name="mode"]:checked').value === 'editing';
     const hours = Number(form.querySelector('input[name="duration"]:checked').value);
-    const recording = !editingOnly;
-    byId('recording-formula').textContent = editingOnly ? 'Your footage' : 'Recording';
-    byId('deliverables-step').textContent = editingOnly ? '1' : '2';
     const episodes = byId('episodes').checked;
     const clips = byId('clips').checked;
+    const publishPack = byId('publish-pack').checked;
+    const clipSize = Number(form.querySelector('input[name="clip-size"]:checked').value);
+    const clipPrice = clipSize === 5 ? 100 : 180;
+    const episodePrice = publishPack ? 220 : 180;
+    byId('episode-name').textContent = publishPack ? 'Episode Ready' : 'Episode Edit Only';
+    byId('episode-description').textContent = publishPack ? 'Your finished video and audio episode, plus a thumbnail and the words you need to publish it.' : 'Your finished video and audio episode. You supply your own thumbnail and publishing copy.';
+    byId('episode-inclusions').textContent = 'Camera cuts, tightened pacing, cleaned sound and colour correction.' + (publishPack ? ' One thumbnail, three title options, a description and chapters.' : ' Publishing assets are not included.');
     const teleprompterInput = byId('teleprompter');
     byId('recording-options').hidden = editingOnly;
     byId('recording-options').disabled = editingOnly;
     byId('teleprompter-option').hidden = editingOnly;
     teleprompterInput.disabled = editingOnly;
     if (editingOnly) teleprompterInput.checked = false;
-    byId('recording-help').hidden = editingOnly;
-    const teleprompter = recording && teleprompterInput.checked;
-    byId('episode-quantity').hidden = !episodes;
-    byId('clip-quantity').hidden = !clips;
+    byId('episode-options').hidden = !episodes;
+    byId('clip-options').hidden = !clips;
+    byId('episode-price').replaceChildren(document.createTextNode('+ ' + pounds.format(episodePrice)));
+    const epUnit = document.createElement('small'); epUnit.textContent = 'per episode'; byId('episode-price').append(epUnit);
+    byId('clip-price').replaceChildren(document.createTextNode('+ ' + pounds.format(clipPrice)));
+    const clipUnit = document.createElement('small'); clipUnit.textContent = 'for ' + clipSize + ' clips'; byId('clip-price').append(clipUnit);
     const episodeCount = quantity('episode', episodes);
     const clipCount = quantity('clip', clips);
     const appointment = hours + ' hour' + (hours === 1 ? '' : 's');
-    byId('appointment').textContent = recording ? 'Studio appointment: ' + appointment + '.' : 'Editing only. No studio appointment needed.';
-    byId('clip-description').textContent = clipCount === null ? 'Each pack contains 10 clips' : (clipCount || 1) + ' pack' + ((clipCount || 1) === 1 ? '' : 's') + ' = ' + ((clipCount || 1) * 10) + ' clips';
+    byId('appointment').textContent = editingOnly ? 'Editing only. No studio appointment.' : 'Studio time requested: ' + appointment + ', including setup.';
+    byId('clip-description').textContent = clipCount === null ? 'Each pack contains ' + clipSize + ' highlights' : (clipCount || 1) + ' pack' + ((clipCount || 1) === 1 ? '' : 's') + ' = ' + ((clipCount || 1) * clipSize) + ' highlights';
     if (episodeCount === null || clipCount === null) {
       clearActions('Check the quantities to see your total.');
       byId('mobile-price').textContent = 'Check quantity';
       return;
     }
     if (editingOnly && !episodes && !clips) {
-      clearActions('Choose an episode edit or clip pack to build your editing quote.');
+      clearActions('Choose Episode Ready or Social Highlights for your editing enquiry.');
       return;
     }
-
     const rows = [];
-    if (recording) rows.push([appointment + ' recording', rates[hours]]);
-    if (episodes) rows.push([episodeCount + ' finished episode' + (episodeCount === 1 ? '' : 's') + ' with thumbnail and titles', episodeCount * 220]);
-    if (clips) rows.push([clipCount * 10 + ' captioned clips', clipCount * 150]);
-    if (teleprompter) rows.push(['Teleprompter', 45]);
+    if (!editingOnly) rows.push(['Studio Session · ' + appointment, rates[hours]]);
+    if (episodes) rows.push([episodeCount + ' × ' + (publishPack ? 'Episode Ready (with publishing assets)' : 'Episode edit only (no publishing assets)'), episodeCount * episodePrice]);
+    if (clips) rows.push([clipCount + ' × Social Highlights (' + clipSize + ' clips per pack)', clipCount * clipPrice]);
+    if (!editingOnly && teleprompterInput.checked) rows.push(['Teleprompter · flat booking fee', 45]);
     const total = rows.reduce((sum, row) => sum + row[1], 0);
-    const needsQuote = editingOnly || episodes || clips || teleprompter;
-    const totalLabel = needsQuote ? 'Estimated total' : 'Total';
     const list = document.createElement('dl');
-    for (const [name, value] of rows.concat([[totalLabel, total]])) {
+    for (const [name, value] of rows.concat([['Estimated total', total]])) {
       const row = document.createElement('div');
-      if (name === totalLabel) row.className = 'total';
-      const term = document.createElement('dt');
-      term.textContent = name;
-      const detail = document.createElement('dd');
-      detail.textContent = pounds.format(value);
-      row.append(term, detail);
-      list.append(row);
+      if (name === 'Estimated total') row.className = 'total';
+      const term = document.createElement('dt'); term.textContent = name;
+      const detail = document.createElement('dd'); detail.textContent = pounds.format(value);
+      row.append(term, detail); list.append(row);
     }
     quote.replaceChildren(list);
     byId('mobile-price').textContent = pounds.format(total);
     const brief = byId('session-brief').value.trim().slice(0, 700);
-    const lines = [editingOnly ? 'Hi Nova, I would like an editing-only quote:' : 'Hi Nova, I would like to arrange this session:', ...rows.map(([name, value]) => name + ': ' + pounds.format(value)), totalLabel + ': ' + pounds.format(total)];
-    if (brief) lines.push('', 'My notes: ' + brief);
-    lines.push('', 'Please confirm the scope, availability and delivery dates, and send a payment link.');
-    const message = lines.join('\n');
-    emailAction.href = 'mailto:info@thenovastudios.co.uk?subject=' + encodeURIComponent(editingOnly ? 'Nova editing enquiry' : 'Nova session enquiry') + '&body=' + encodeURIComponent(message);
+    const lines = [editingOnly ? 'Hi Nova, I would like an editing-only quote:' : 'Hi Nova, I would like to book:', ...rows.map(([name, value]) => name + ': ' + pounds.format(value)), 'Estimated total: ' + pounds.format(total)];
+    if (episodes || clips) lines.push('', 'Scope: up to 90 minutes of source conversation per episode / highlights pack; one consolidated revision round. Dates and source suitability to be confirmed. Files for me to publish.');
+    if (brief) lines.push('', 'My brief: ' + brief);
+    lines.push('', 'Please confirm availability, scope and delivery dates, then send an itemised payment link.');
+    bookingSummary = lines.join('\n');
+    action.href = 'https://wa.me/447761075775?text=' + encodeURIComponent(bookingSummary);
+    action.textContent = 'Send choices via WhatsApp';
+    emailAction.href = 'mailto:info@thenovastudios.co.uk?subject=' + encodeURIComponent(editingOnly ? 'Nova editing enquiry' : 'Nova booking request') + '&body=' + encodeURIComponent(bookingSummary);
     byId('summary-actions').hidden = false;
-    if (needsQuote) {
-      action.textContent = 'Enquire with these choices';
-      action.href = 'https://wa.me/447761075775?text=' + encodeURIComponent(message);
-      byId('handoff-note').textContent = 'We confirm your footage, scope, availability and delivery dates before sending a payment link. Your choices and notes are included in the enquiry.';
-    } else {
-      action.textContent = 'Book ' + appointment;
-      action.href = 'https://sumupbookings.com/the-nova-studios';
-      byId('handoff-note').textContent = 'On the booking page, select “' + serviceNames[hours] + '” at ' + pounds.format(total) + ', then choose your date. These choices are not automatically added to the booking page. Use email if you need to send your notes first.';
-    }
   }
 
   form.addEventListener('submit', event => event.preventDefault());
@@ -114,6 +109,28 @@
     const valid = input.value.trim() !== '' && Number.isInteger(current) && current >= 1 && current <= 99;
     input.value = valid ? Math.max(1, Math.min(99, current + Number(button.dataset.change))) : 1;
     update();
+  });
+  for (const button of document.querySelectorAll('[data-example]')) {
+    button.addEventListener('click', () => {
+      form.querySelector('input[name="mode"][value="record"]').checked = true;
+      form.querySelector('input[name="duration"][value="2"]').checked = true;
+      byId('episodes').checked = true; byId('publish-pack').checked = true; byId('episode-count').value = 1;
+      byId('clips').checked = button.dataset.example !== 'episode'; byId('clip-count').value = 1;
+      form.querySelector('input[name="clip-size"][value="' + (button.dataset.example === 'ten' ? 10 : 5) + '"]').checked = true;
+      byId('teleprompter').checked = false;
+      update();
+      byId('episodes').focus({ preventScroll: true });
+      form.scrollIntoView({ block: 'start', behavior: 'auto' });
+    });
+  }
+  byId('copy-summary').addEventListener('click', async () => {
+    if (!bookingSummary) return;
+    try {
+      await navigator.clipboard.writeText(bookingSummary);
+      byId('copy-status').textContent = 'Booking summary copied.';
+    } catch (_) {
+      byId('copy-status').textContent = 'Copy is unavailable here. Use WhatsApp or email to open the same summary.';
+    }
   });
   update();
 })();
