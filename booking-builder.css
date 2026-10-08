@@ -1,0 +1,106 @@
+/* Scoped to the session builder; no effect on the rest of the website. */
+#session-pricing{--panel:#19271f;--muted:#c5c6b8;--line:#465248;--gold:#efb24f;--dark:#172014;color:#f4eddf}
+#session-pricing [hidden]{display:none!important}
+#session-pricing input,#session-pricing button,#session-pricing textarea{font:inherit}
+#session-pricing .mode-switch{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.5rem 0}
+#session-pricing .mode-switch label{padding:.6rem 1rem;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+#session-pricing .mode-switch label:has(input:checked){border-color:var(--gold);background:#2a3527}
+#session-pricing .mode-switch input{accent-color:var(--gold);margin-right:.5rem}
+#session-pricing .summary-actions{display:grid;gap:.75rem;margin-top:1.2rem}
+#session-pricing .summary-actions .btn{white-space:normal;justify-content:center;text-align:center;line-height:1.4}
+#session-pricing .summary-actions .email-link{font-size:.85rem;text-align:center;text-decoration:underline}
+#session-pricing .brief-label{display:block;font-weight:600;margin-bottom:.5rem}
+#session-pricing textarea{width:100%;min-height:100px;resize:vertical;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);padding:.8rem}
+#session-pricing .brief-help{color:var(--muted);font-size:.8rem;margin:.5rem 0 1rem}
+#session-pricing summary{display:block}
+#session-pricing .counter input{padding:0;min-height:40px}
+#session-pricing .other a{display:inline-block;margin-top:.75rem;color:var(--gold)}
+#session-pricing .formula { display:flex;align-items:center;flex-wrap:wrap;gap:.65rem;margin:1.6rem 0 2.5rem;font-size:.83rem }
+#session-pricing .formula span { border:1px solid var(--line);padding:.35rem .75rem;border-radius:8px }
+#session-pricing .formula b { color:var(--gold);font-size:1.2rem }
+#session-pricing .formula .result { color:var(--gold);border-color:var(--gold) }
+#session-pricing .builder { display:grid;grid-template-columns:minmax(0,1fr) 335px;gap:2rem;align-items:start }
+#session-pricing .controls { min-width:0 }
+#session-pricing fieldset { border:0;margin:0 0 2rem;padding:0;min-width:0 }
+#session-pricing legend { font-size:1.15rem;font-weight:650;margin-bottom:1.25rem }
+#session-pricing .step { display:inline-grid;place-items:center;border:1px solid var(--line);border-radius:50%;width:30px;height:30px;margin-right:.65rem;font-size:.85rem;font-weight:500;color:var(--gold) }
+#session-pricing .times { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem }
+#session-pricing .time { position:relative;border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:1rem .85rem;cursor:pointer;min-width:0 }
+#session-pricing .time:has(input:checked) { border-color:var(--gold);background:#2a3527;box-shadow:inset 0 0 0 1px var(--gold) }
+#session-pricing .time input { position:absolute;right:.65rem;top:.75rem;accent-color:var(--gold);width:17px;height:17px;margin:0 }
+#session-pricing .time .hours { display:block;font-weight:650;padding-right:1rem }
+#session-pricing .time .caption { display:block;font-size:.75rem;color:var(--muted);margin-top:.2rem;min-height:1.6em }
+#session-pricing .time .price { display:block;font:1.9rem/1.2 Georgia,serif;margin-top:.75rem }
+#session-pricing .included { font-size:.83rem;color:var(--muted);margin-top:.85rem }
+#session-pricing .addon { border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:.8rem;overflow:hidden }
+#session-pricing .addon:has(.addon-check:checked) { border-color:var(--gold) }
+#session-pricing .addon-label { display:grid;grid-template-columns:22px minmax(0,1fr) auto;align-items:start;gap:.85rem;padding:1.15rem;cursor:pointer }
+#session-pricing .addon-check { accent-color:var(--gold);width:21px;height:21px;margin:.2rem 0 0 }
+#session-pricing .addon-name { display:block;font-weight:650;line-height:1.4 }
+#session-pricing .addon-description { display:block;color:var(--muted);font-size:.85rem;margin-top:.4rem }
+#session-pricing .addon-price { font-weight:650;white-space:nowrap;text-align:right }
+#session-pricing .addon-price small { display:block;color:var(--muted);font-size:.72rem;font-weight:400 }
+#session-pricing .quantity { display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:0 1.15rem;padding:.9rem 0;border-top:1px solid var(--line);font-size:.83rem }
+#session-pricing .counter { display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;overflow:hidden }
+#session-pricing .counter button { background:transparent;border:0;color:var(--ink);width:40px;height:42px;cursor:pointer;font-size:1.15rem }
+#session-pricing .counter button:hover { background:#344438 }
+#session-pricing .counter button:disabled { opacity:.35;cursor:default }
+#session-pricing .counter input { background:transparent;border:0;color:var(--ink);width:45px;text-align:center;appearance:textfield;-moz-appearance:textfield }
+#session-pricing .counter input::-webkit-inner-spin-button { appearance:none }
+#session-pricing .quantity small { display:block;color:var(--muted) }
+#session-pricing .error { font-size:.82rem;color:#ffd39e;padding:0 1.15rem 1rem }
+#session-pricing .summary { position:sticky;top:1rem;background:var(--ink);color:var(--dark);padding:1.5rem;border-radius:16px }
+#session-pricing .summary .eyebrow { color:#53614c }
+#session-pricing .summary h2 { font:1.7rem Georgia,serif;margin:.5rem 0 1rem }
+#session-pricing .summary dl { margin:0 }
+#session-pricing .summary dl>div { display:flex;justify-content:space-between;gap:1rem;padding:.65rem 0;font-size:.9rem }
+#session-pricing .summary dt { overflow-wrap:anywhere }
+#session-pricing .summary dd { margin:0;white-space:nowrap }
+#session-pricing .summary .total { border-top:1px solid #b5beae;margin-top:.7rem;padding-top:1rem;align-items:center;font-size:1rem;font-weight:700 }
+#session-pricing .summary .total dd { font:2.5rem Georgia,serif }
+#session-pricing .appointment { margin-top:1rem;font-size:.85rem;font-weight:650 }
+#session-pricing .summary-note { margin-top:.7rem;font-size:.78rem;color:#44513d }
+#session-pricing .delivery-note { padding:1rem 0;font-size:.83rem;color:var(--muted) }
+#session-pricing details { border-top:1px solid var(--line);padding:1rem 0 }
+#session-pricing summary { cursor:pointer;font-weight:600;min-height:32px }
+#session-pricing details p { margin-top:.75rem;font-size:.85rem;color:var(--muted) }
+#session-pricing .other { display:grid;grid-template-columns:1fr 1fr;gap:2rem;border-top:1px solid var(--line);margin-top:2rem;padding-top:1.5rem }
+#session-pricing .other p { font-size:.85rem;color:var(--muted);margin-top:.5rem }
+#session-pricing footer { border-top:1px solid var(--line);font-size:.75rem;color:var(--muted) }
+#session-pricing :focus-visible { outline:3px solid var(--gold);outline-offset:4px }
+#session-pricing .time:focus-within { outline:3px solid var(--gold);outline-offset:4px }
+#session-pricing .mobile-total { display:none }
+@media(max-width:1050px) {
+#session-pricing .builder { grid-template-columns:minmax(0,1fr) 300px;gap:1.25rem }
+#session-pricing .times { grid-template-columns:repeat(2,minmax(0,1fr)) }
+}
+@media(max-width:760px) {
+#session-pricing .builder { grid-template-columns:1fr }
+#session-pricing .summary { position:static }
+#session-pricing .other { grid-template-columns:1fr;gap:1.3rem }
+#session-pricing .location { font-size:.65rem }
+#session-pricing header, #session-pricing main, #session-pricing footer { padding-left:1rem;padding-right:1rem }
+#session-pricing .draft { font-size:.68rem }
+#session-pricing main { padding-top:1.7rem }
+#session-pricing .formula { gap:.4rem;margin:1.2rem 0 2rem;font-size:.75rem }
+#session-pricing .formula span { padding:.3rem .5rem }
+#session-pricing .addon-label { grid-template-columns:21px minmax(0,1fr);padding:1rem;gap:.7rem }
+#session-pricing .addon-price { grid-column:2;text-align:left }
+#session-pricing .addon-price small { display:inline;margin-left:.35rem }
+#session-pricing .addon-description { font-size:.82rem }
+#session-pricing .summary { scroll-margin-top:1rem }
+#session-pricing .mobile-total { display:flex;position:sticky;bottom:0;z-index:5;background:var(--gold);color:var(--dark);padding:.8rem 1rem max(.8rem,env(safe-area-inset-bottom));align-items:center;justify-content:space-between;gap:1rem;font-size:.9rem }
+#session-pricing .mobile-total strong { font-size:1.2rem }
+#session-pricing .mobile-total a { font-weight:650 }
+#session-pricing .quantity { margin:0 1rem }
+#session-pricing .times { gap:.65rem }
+#session-pricing .time { padding:1rem }
+#session-pricing .time .price { font-size:2rem }
+}
+
+@media(max-width:760px){#session-pricing .mobile-total{bottom:56px;gap:.65rem;border-radius:8px;margin-top:1rem}#session-pricing .mobile-total span{min-width:0}#session-pricing .mobile-total strong{font-size:1rem}#session-pricing .mobile-total a{flex-shrink:0}#session-pricing .summary{scroll-margin-top:90px}}
+
+#session-pricing .step{padding:0}
+#session-pricing .summary{top:100px}
+
+#session-pricing .other section{padding:0}
