@@ -6,7 +6,7 @@
   const quote = byId('quote');
   const action = byId('session-action');
   const emailAction = byId('email-action');
-  const rates = { 1: 99, 2: 160, 4: 300, 8: 560 };
+  const rates = { 1: 99, 2: 170, 4: 350, 8: 620 };
   const pounds = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 });
   let bookingSummary = '';
 
@@ -35,45 +35,47 @@
     byId('copy-status').textContent = '';
     const editingOnly = form.querySelector('input[name="mode"]:checked').value === 'editing';
     const hours = Number(form.querySelector('input[name="duration"]:checked').value);
-    const episodes = byId('episodes').checked;
-    const clips = byId('clips').checked;
-    const publishPack = byId('publish-pack').checked;
-    const clipSize = Number(form.querySelector('input[name="clip-size"]:checked').value);
-    const clipPrice = clipSize === 5 ? 100 : 180;
-    const episodePrice = publishPack ? 220 : 180;
-    byId('episode-name').textContent = publishPack ? 'Episode Ready' : 'Episode Edit Only';
-    byId('episode-description').textContent = publishPack ? 'Your finished video and audio episode, plus a thumbnail and the words you need to publish it.' : 'Your finished video and audio episode. You supply your own thumbnail and publishing copy.';
-    byId('episode-inclusions').textContent = 'Camera cuts, tightened pacing, cleaned sound and colour correction.' + (publishPack ? ' One thumbnail, three title options, a description and chapters.' : ' Publishing assets are not included.');
+    const bundle = byId('bundle').checked;
+    const services = [
+      ['episodes', 'episode', 'Full long-form episode edit', 175],
+      ['clips', 'clip', 'Five professionally edited vertical social clips', 150],
+      ['trailer', 'trailer', 'One-minute episode trailer', 100],
+      ['bundle', 'bundle', 'Complete Editing Bundle (long-form + 5 clips + 1-minute trailer; save £75 per episode)', 350]
+    ];
     const teleprompterInput = byId('teleprompter');
     byId('recording-options').hidden = editingOnly;
     byId('recording-options').disabled = editingOnly;
     byId('teleprompter-option').hidden = editingOnly;
     teleprompterInput.disabled = editingOnly;
     if (editingOnly) teleprompterInput.checked = false;
-    byId('episode-options').hidden = !episodes;
-    byId('clip-options').hidden = !clips;
-    byId('episode-price').replaceChildren(document.createTextNode('+ ' + pounds.format(episodePrice)));
-    const epUnit = document.createElement('small'); epUnit.textContent = 'per episode'; byId('episode-price').append(epUnit);
-    byId('clip-price').replaceChildren(document.createTextNode('+ ' + pounds.format(clipPrice)));
-    const clipUnit = document.createElement('small'); clipUnit.textContent = 'for ' + clipSize + ' clips'; byId('clip-price').append(clipUnit);
-    const episodeCount = quantity('episode', episodes);
-    const clipCount = quantity('clip', clips);
     const appointment = hours + ' hour' + (hours === 1 ? '' : 's');
-    byId('appointment').textContent = editingOnly ? 'Editing only. No studio appointment.' : 'Studio time requested: ' + appointment + ', including setup.';
-    byId('clip-description').textContent = clipCount === null ? 'Each pack contains ' + clipSize + ' highlights' : (clipCount || 1) + ' pack' + ((clipCount || 1) === 1 ? '' : 's') + ' = ' + ((clipCount || 1) * clipSize) + ' highlights';
-    if (episodeCount === null || clipCount === null) {
+    byId('appointment').textContent = editingOnly ? 'Editing only. No studio appointment.' : 'Studio time requested: ' + appointment + ', including setup. Editing adds no studio hours.';
+    const rows = [];
+    if (!editingOnly) rows.push(['Studio hire · ' + appointment, rates[hours]]);
+    let hasEditing = false;
+    let invalid = false;
+    for (const [id, key, name, price] of services) {
+      const input = byId(id);
+      input.disabled = bundle && id !== 'bundle';
+      if (input.disabled) input.checked = false;
+      const enabled = input.checked;
+      byId(key + '-options').hidden = !enabled;
+      const count = quantity(key, enabled);
+      if (enabled) {
+        hasEditing = true;
+        if (count === null) invalid = true;
+        else rows.push([count + ' × ' + name + ' (per episode)', count * price]);
+      }
+    }
+    if (invalid) {
       clearActions('Check the quantities to see your total.');
       byId('mobile-price').textContent = 'Check quantity';
       return;
     }
-    if (editingOnly && !episodes && !clips) {
-      clearActions('Choose Episode Ready or Social Highlights for your editing enquiry.');
+    if (editingOnly && !hasEditing) {
+      clearActions('Choose an editing service or the Complete Editing Bundle.');
       return;
     }
-    const rows = [];
-    if (!editingOnly) rows.push(['Studio Session · ' + appointment, rates[hours]]);
-    if (episodes) rows.push([episodeCount + ' × ' + (publishPack ? 'Episode Ready (with publishing assets)' : 'Episode edit only (no publishing assets)'), episodeCount * episodePrice]);
-    if (clips) rows.push([clipCount + ' × Social Highlights (' + clipSize + ' clips per pack)', clipCount * clipPrice]);
     if (!editingOnly && teleprompterInput.checked) rows.push(['Teleprompter · flat booking fee', 45]);
     const total = rows.reduce((sum, row) => sum + row[1], 0);
     const list = document.createElement('dl');
@@ -88,7 +90,7 @@
     byId('mobile-price').textContent = pounds.format(total);
     const brief = byId('session-brief').value.trim().slice(0, 700);
     const lines = [editingOnly ? 'Hi Nova, I would like an editing-only quote:' : 'Hi Nova, I would like to book:', ...rows.map(([name, value]) => name + ': ' + pounds.format(value)), 'Estimated total: ' + pounds.format(total)];
-    if (episodes || clips) lines.push('', 'Scope: up to 90 minutes of source conversation per episode / highlights pack; one consolidated revision round. Dates and source suitability to be confirmed. Files for me to publish.');
+    if (hasEditing) lines.push('', 'Editing prices are per episode. One consolidated revision round; for bundles, one combined round across all three deliverables. Footage length, scope, suitability and delivery dates to be confirmed. Studio hire is separate.');
     if (brief) lines.push('', 'My brief: ' + brief);
     lines.push('', 'Please confirm availability, scope and delivery dates, then send an itemised payment link.');
     bookingSummary = lines.join('\n');
@@ -114,12 +116,12 @@
     button.addEventListener('click', () => {
       form.querySelector('input[name="mode"][value="record"]').checked = true;
       form.querySelector('input[name="duration"][value="2"]').checked = true;
-      byId('episodes').checked = true; byId('publish-pack').checked = true; byId('episode-count').value = 1;
-      byId('clips').checked = button.dataset.example !== 'episode'; byId('clip-count').value = 1;
-      form.querySelector('input[name="clip-size"][value="' + (button.dataset.example === 'ten' ? 10 : 5) + '"]').checked = true;
+      for (const id of ['episodes', 'clips', 'trailer', 'bundle']) byId(id).checked = false;
+      byId(button.dataset.example === 'bundle' ? 'bundle' : 'episodes').checked = true;
+      for (const key of ['episode', 'clip', 'trailer', 'bundle']) byId(key + '-count').value = 1;
       byId('teleprompter').checked = false;
       update();
-      byId('episodes').focus({ preventScroll: true });
+      byId(button.dataset.example === 'bundle' ? 'bundle' : 'episodes').focus({ preventScroll: true });
       form.scrollIntoView({ block: 'start', behavior: 'auto' });
     });
   }
